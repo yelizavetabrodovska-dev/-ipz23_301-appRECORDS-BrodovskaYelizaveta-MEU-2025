@@ -1,0 +1,182 @@
+<section id="topic">
+  <h2>Тема, мета та місце розташування</h2>
+  <p><b>Тема:</b>  ОБ'ЄКТ. МЕТОДИ ОБ'ЄКТА. МАСИВ ОБ'ЄКТІВ. ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ. CALLBACK. СТРІЛОЧНІ ФУНКЦІЇ. СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ.</p>
+    <p><b>Мета:</b> придбати практичні навички роботи з об'єктами. Методи об'єкта. Callback. Стрілочні функції. Стрілочні функції як колбеки. Реалізація програм засовами мови JAVASCRIPT.</p> 
+</p><b>Місце розташування:</b> <a href="http://github.com/yelizavetabrodovska-dev/ipz22_301--app-INDEPENDENT-YelyzavetaBrodovska-MEU-2025" target="_blank">GitHub</a></p>
+</section>
+
+<section id="Завдання №1" data-indent="2">
+  <h2>Завдання №1</h2>
+  <p> 
+<pre>function createProduct(obj, callback) {
+  const product = { id: Date.now(), ...obj };
+  callback(product);
+}
+
+// Колбеки
+function logProduct(product) {
+  console.log(product);
+}
+
+function logTotalPrice(product) {
+  console.log(`Загальна вартість: ${product.price * product.quantity}`);
+}
+
+createProduct({ name: "Apple", price: 10, quantity: 5 }, logProduct);
+createProduct({ name: "Orange", price: 8, quantity: 3 }, logTotalPrice);</pre>
+  </p>
+  <p><b>Результат виконання:</b></p>
+<img src="images/result1.png" alt="Result 3_2/1">
+</section>
+
+<section id="Завдання №3" data-indent="2">
+  <h2>Завдання №3</h2>
+  <p>
+<pre>const medicines = {
+  Агалгін: new Date("2022-05-01"),
+  Ношпа: new Date("2025-07-02"),
+  Альфахолін: new Date("2024-12-21"),
+  Аспірин: new Date("2022-08-15"),
+  Аспаркам: new Date("2024-04-18"),
+};
+
+// Отримати лише назви препаратів, що ще не прострочені
+const currentDate = new Date();
+const validMedicines = Object.entries(medicines)
+  .filter(([name, date]) => date > currentDate)
+  .sort((a, b) => a[1] - b[1])
+  .map(([name]) => name);
+
+console.log(validMedicines);</pre>
+  </p>
+  <p><b>Результат виконання:</b></p>
+<img src="images/result3.png" alt="Result 3_2/3">
+<p>(немає непрострочених препаратів)</p>
+</section>
+
+<section id="Завдання №5" data-indent="2">
+  <h2>Завдання №5</h2>
+  <p>
+    <pre>const fruits = [
+  { name: "apple", price: 200 },
+  { name: "orange", price: 300 },
+  { name: "grapes", price: 750 },
+];
+
+// Функція, що повертає новий масив з id і знижкою 20%
+function updateFruits(fruits) {
+  return fruits.map((fruit, index) => ({
+    id: index + 1,
+    name: fruit.name,
+    price: fruit.price * 0.8, // 20% знижка
+  }));
+}
+
+const discountedFruits = updateFruits(fruits);
+console.log(discountedFruits);</pre>
+  </p>
+  <p><b>Результат виконання:</b></p>
+<img src="images/result5.png" alt="Result 3_2/5">
+</section>
+
+<section id="Завдання №7" data-indent="2">
+  <h2>Завдання №7</h2>
+  <p>
+    <pre>
+      class Client {
+      #login;
+      #email;
+
+      constructor(login, email) {
+      this.#login = login;
+      this.#email = email;
+      }
+
+      get login() {
+      return this.#login;
+      }
+
+      set login(newLogin) {
+      this.#login = newLogin;
+      }
+
+      get email() {
+      return this.#email;
+      }
+
+      set email(newEmail) {
+      this.#email = newEmail;
+      }
+    }  
+
+   const client1 = new Client("User1", "user1@gmail.com");
+   console.log(client1.login);
+   client1.login = "NewUser";
+   console.log(client1.login);</pre>
+  </p>
+  <p><b>Результат виконання:</b></p>
+<img src="images/result7.png" alt="Result 3_2/7">
+</section>
+
+<section id="Завдання №9" data-indent="2">
+  <h2>Завдання №9</h2>
+  <p>
+    <pre>const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+
+// Повертаємо об'єкт із кількістю кожного тегу
+const tagCount = tweets
+  .flatMap(tweet => tweet.tags)
+  .reduce((acc, tag) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+    return acc;
+  }, {});
+
+console.log(tagCount);</pre>
+  </p>
+  <p><b>Результат виконання:</b></p>
+<img src="images/result9.png" alt="Result 3_2/9">
+</section>
+
+<section id="Завдання №10" data-indent="2">
+  <h2>Завдання №10</h2>
+  <p>
+    <pre>function checkBrackets(str) {
+  const stack = [];
+  const brackets = {
+    "(": ")",
+    "[": "]",
+    "{": "}"
+  };
+
+  for (const char of str) {
+    if (brackets[char]) {
+      stack.push(char);
+    } else if (Object.values(brackets).includes(char)) {
+      const last = stack.pop();
+      if (brackets[last] !== char) return false;
+    }
+  }
+  return stack.length === 0;
+}
+
+console.log(checkBrackets("function test() { return [1, 2, 3]; }"));
+console.log(checkBrackets("function bad() { return [1, 2, 3; }"));
+   </pre>
+  </p>
+  <p><b>Результат виконання:</b></p>
+<img src="iimages/result10.png" alt="Result 3_2/10">
+</section>
+
+<section id="concl">
+  <h2>Висновки</h2>
+  <p>
+    У ході виконання завдань я виконала роботу з колбеками, об’єктами, класами, 
+    стрілочними функціями, перевіркою дужок та використанням методів масивів.
+  </p>
+</section>

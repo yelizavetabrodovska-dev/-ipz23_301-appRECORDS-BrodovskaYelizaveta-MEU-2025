@@ -1,0 +1,722 @@
+<section id="topic">
+  <h2>Тема, мета та місце розташування</h2>
+  <p><b>Тема:</b> Структура HTML-документа</p>
+  <p><b>Мета:</b> Ознайомитись із базовою структурою HTML-документа, навчитися створювати елементи сторінки, таблиці, форми та вставляти зображення.</p>
+  <p><b>Місце розташування:</b> <a href="http://github.com/yelizavetabrodovska-dev/ipz22_301--app-INDEPENDENT-YelyzavetaBrodovska-MEU-2025" target="_blank">GitHub</a></p>
+</section>
+
+
+<section id="ЗАВДАННЯ №1 Зовнішній вигляд макету. Код макету.">
+  <h2><b>Завдання №1</b> Зовнішній вигляд макету. Код макету.</h2>
+  <p><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;HealthyFood&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;div class="logo"&gt;HealthyFood&lt;/div&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Recipes&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Categories&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;section class="hero"&gt;
+    &lt;h1&gt;Eat clean, feel great&lt;/h1&gt;
+    &lt;p&gt;Discover healthy and delicious meals for every lifestyle&lt;/p&gt;
+    &lt;button&gt;Explore Recipes&lt;/button&gt;
+  &lt;/section&gt;
+
+  &lt;section class="content-grid"&gt;
+    &lt;article&gt;
+      &lt;img src="images/recipe1.jpg" alt="Healthy salad"&gt;
+      &lt;h3&gt;Fresh Summer Salad&lt;/h3&gt;
+      &lt;p&gt;Light, refreshing and full of vitamins.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article&gt;
+      &lt;img src="images/recipe2.jpg" alt="Smoothie bowl"&gt;
+      &lt;h3&gt;Green Smoothie Bowl&lt;/h3&gt;
+      &lt;p&gt;Perfect breakfast full of energy.&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article&gt;
+      &lt;img src="images/recipe3.jpg" alt="Avocado toast"&gt;
+      &lt;h3&gt;Avocado Toast Deluxe&lt;/h3&gt;
+      &lt;p&gt;Simple and tasty start of your day.&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;footer&gt;
+    &lt;div class="footer-section"&gt;
+      &lt;h4&gt;HealthyFood&lt;/h4&gt;
+      &lt;p&gt;Eat clean, feel great.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="footer-section"&gt;
+      &lt;h4&gt;Links&lt;/h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Home&lt;/li&gt;
+        &lt;li&gt;Recipes&lt;/li&gt;
+        &lt;li&gt;About&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class="footer-section"&gt;
+      &lt;h4&gt;Follow Us&lt;/h4&gt;
+      &lt;p&gt;Instagram | Facebook | Email&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</p>
+</section>
+
+<section id="ЗАВДАННЯ №2">
+  <h2><b>Завдання №2</b></h2>
+  <p>Засобами <b>HTML</b> та <b>CSS</b> виконати <b>Завдання №2</b>, а саме створити окремі веб-сторінки:</p>
+
+    <p><h2>1. Розмітка за допомогою таблиці</h2>
+    <ul>
+      <li>Фіксована таблична верстка</li>
+      <li>Гумова таблична верстка</li>
+    </ul>
+    <p class="note">(Номер варіанта – остання цифра у списку групи)</p>
+
+    <h2>2. Розмітка за допомогою блоків (плаваючих елементів)</h2>
+    <ul>
+      <li>Фіксована блокова верстка</li>
+      <li>Гумова блокова верстка</li>
+    </ul>
+    <p class="note">(Номер варіанта – остання цифра у списку групи + 1)</p>
+  </div></p>
+</section>
+
+<section id="Фіксована таблична верстка" data-indent="2">
+  <h2><b>Фіксована таблична верстка</b></h2>
+  <p><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Фіксована таблична верстка&lt;/title&gt;
+&lt;style&gt;
+  table {
+    width: 600px;
+    height: 400px;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  td {
+    border: 2px solid black;
+    text-align: center;
+    font-size: 24px;
+  }
+  .t1, .t3 { background: #007BFF; color: white; }
+  .t2, .t5 { background: #FFC107; }
+  .t4 { background: white; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td colspan="3" class="t1"&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class="t5"&gt;5&lt;/td&gt;
+      &lt;td class="t4"&gt;4&lt;/td&gt;
+      &lt;td class="t2"&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="3" class="t3"&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</p>
+</section>
+
+<section id="Гумова таблична верстка" data-indent="2">
+  <h2><b>Гумова таблична верстка</b></h2>
+  <p><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Гумова таблична верстка&lt;/title&gt;
+&lt;style&gt;
+  table {
+    width: 80%;
+    height: 80vh;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  td {
+    border: 2px solid black;
+    text-align: center;
+    font-size: 2vw;
+  }
+  .t1, .t3 { background: #007BFF; color: white; }
+  .t2, .t5 { background: #FFC107; }
+  .t4 { background: white; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td colspan="3" class="t1"&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class="t5"&gt;5&lt;/td&gt;
+      &lt;td class="t4"&gt;4&lt;/td&gt;
+      &lt;td class="t2"&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="3" class="t3"&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</p>
+</section>
+
+<section id="Фіксована блокова верстка" data-indent="2">
+  <h2><b>Фіксована блокова верстка</b></h2>
+  <p><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Фіксована блокова верстка&lt;/title&gt;
+&lt;style&gt;
+  body {
+    width: 600px;
+    margin: 20px auto;
+  }
+  .header { background: #FFC107; height: 80px; }
+  .sidebar { background: #007BFF; width: 120px; height: 300px; float: left; }
+  .content { background: white; width: 240px; height: 200px; float: left; }
+  .aside { background: #007BFF; width: 120px; height: 200px; float: left; }
+  .top { background: red; width: 360px; height: 50px; float: left; }
+  .footer { background: #FFC107; height: 50px; clear: both; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="header"&gt;1&lt;/div&gt;
+  &lt;div class="sidebar"&gt;2&lt;/div&gt;
+  &lt;div class="top"&gt;Top&lt;/div&gt;
+  &lt;div class="content"&gt;3&lt;/div&gt;
+  &lt;div class="aside"&gt;4&lt;/div&gt;
+  &lt;div class="footer"&gt;5&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</p>
+</section>
+
+<section id="Гумова блокова верстка" data-indent="2">
+  <h2><b>Гумова блокова верстка</b></h2>
+  <p><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Гумова блокова верстка&lt;/title&gt;
+&lt;style&gt;
+  body {
+    width: 90%;
+    margin: 20px auto;
+  }
+  .header { background: #FFC107; height: 10vh; }
+  .sidebar { background: #007BFF; width: 20%; height: 60vh; float: left; }
+  .top { background: red; width: 60%; height: 10vh; float: left; }
+  .content { background: white; width: 40%; height: 40vh; float: left; }
+  .aside { background: #007BFF; width: 20%; height: 40vh; float: left; }
+  .footer { background: #FFC107; height: 10vh; clear: both; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="header"&gt;1&lt;/div&gt;
+  &lt;div class="sidebar"&gt;2&lt;/div&gt;
+  &lt;div class="top"&gt;Top&lt;/div&gt;
+  &lt;div class="content"&gt;3&lt;/div&gt;
+  &lt;div class="aside"&gt;4&lt;/div&gt;
+  &lt;div class="footer"&gt;5&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</p>
+</section>
+
+<section id="ЗАВДАННЯ №3 FLEXBOX">
+  <h2><b>Завдання №3</b> FLEXBOX</h2>
+  <p>Кожному студенту виконати свій номер варіанта Завдання №3,  за технологією FLEXBOX та засобами CSS.
+Номер варіанта відповідає останній цифрі студента у списку групи.</p>
+</section>
+
+<section id="Скріншот сторінки (FLEXBOX)" data-indent="2">
+  <h2><b>Скріншот сторінки</b> FLEXBOX</h2>
+  <img class="image_task3" src="images/task3(1).png" alt="1">
+  <img class="image_task3" src="images/task3(2).png" alt="2">
+  <img class="image_task3" src="images/task3(3).png" alt="3">
+</section>
+
+<section id="HTML-код (FLEXBOX)" data-indent="2">
+  <h2><b>HTML-код</b>(FLEXBOX)</h2>
+  <p><pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;
+  &lt;title&gt;Luxoft&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- ===== ХЕДЕР ===== --&gt;
+&lt;header&gt;
+  &lt;nav class="nav"&gt;
+    &lt;a href="#"&gt;Форми навчання&lt;/a&gt;
+    &lt;a href="#"&gt;Заходи&lt;/a&gt;
+    &lt;a href="#"&gt;Про Академію&lt;/a&gt;
+    &lt;a href="#"&gt;Контакти&lt;/a&gt;
+
+    &lt;div class="dropdown"&gt;
+      &lt;div class="dropdown-btn"&gt;Київ&lt;/div&gt;
+      &lt;div class="dropdown-content"&gt;
+        &lt;a href="#"&gt;Львів&lt;/a&gt;
+        &lt;a href="#"&gt;Одеса&lt;/a&gt;
+        &lt;a href="#"&gt;Дніпро&lt;/a&gt;
+        &lt;a href="#"&gt;Харків&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;!-- ===== ОСНОВНИЙ КОНТЕНТ ===== --&gt;
+&lt;section class="program-section"&gt;
+  &lt;h2&gt;Для кого розроблена програма&lt;/h2&gt;
+  &lt;div class="cards"&gt;
+    &lt;div class="card reverse"&gt;
+      &lt;div class="card-img"&gt;
+        &lt;img src="images/1.png" alt="Школярі та випускники"&gt;
+      &lt;/div&gt;
+      &lt;div class="card-body"&gt;
+        &lt;h3&gt;Школярі та випускники (15–18 років)&lt;/h3&gt;
+        &lt;p&gt;отримають першу професію, не відкладаючи на потім свою мрію стати програмістом.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card"&gt;
+      &lt;div class="card-img"&gt;
+        &lt;img src="images/2.png" alt="Студенти ВНЗ"&gt;
+      &lt;/div&gt;
+      &lt;div class="card-body"&gt;
+        &lt;h3&gt;Студенти ВНЗ (18–23 роки)&lt;/h3&gt;
+        &lt;p&gt;освоять другу спеціальність паралельно з університетською освітою.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card reverse"&gt;
+      &lt;div class="card-img"&gt;
+        &lt;img src="images/3.png" alt="Представники інших професій"&gt;
+      &lt;/div&gt;
+      &lt;div class="card-body"&gt;
+        &lt;h3&gt;Представники інших професій (23–55 років)&lt;/h3&gt;
+        &lt;p&gt;яких не влаштовує поточна кар’єрна і фінансова перспектива, зможуть перевчитися на розробника ПЗ і отримати затребувану професію.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="card"&gt;
+      &lt;div class="card-img"&gt;
+        &lt;img src="images/4.png" alt="Всі бажаючі підвищити IT-кваліфікацію"&gt;
+      &lt;/div&gt;
+      &lt;div class="card-body"&gt;
+        &lt;h3&gt;Всі бажаючі підвищити IT-кваліфікацію&lt;/h3&gt;
+        &lt;p&gt;систематизують свої знання і отримають робочі навички, затребувані сучасним IT.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- ===== НОВИЙ БЛОК "ЯК ПРОХОДИТЬ НАВЧАННЯ" ===== --&gt;
+&lt;section class="study-section"&gt;
+  &lt;h2&gt;Як проходить навчання&lt;/h2&gt;
+  &lt;div class="study-photos"&gt;
+    &lt;div class="study-photo"&gt;&lt;img src="images/5.png" alt="Навчання 1"&gt;&lt;/div&gt;
+    &lt;div class="study-photo"&gt;&lt;img src="images/6.png" alt="Навчання 2"&gt;&lt;/div&gt;
+    &lt;div class="study-photo"&gt;&lt;img src="images/7.png" alt="Навчання 3"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- ===== НОВИЙ БЛОК "ПАРТНЕРИ АКАДЕМІЇ" ===== --&gt;
+&lt;section class="partners-section"&gt;
+  &lt;h2&gt;Партнери Академії&lt;/h2&gt;
+  &lt;div class="partner-block"&gt;
+    &lt;div class="partner-logo"&gt;
+      &lt;img src="images/8.png" alt="Luxoft"&gt;
+    &lt;/div&gt;
+    &lt;div class="partner-text"&gt;
+      &lt;h3&gt;Luxoft&lt;/h3&gt;
+      &lt;p&gt;&lt;a href="#"&gt;Luxoft&lt;/a&gt; – глобальна технологічна компанія, одна з лідерів на ринку послуг цифрової трансформації та створення програмних продуктів. Luxoft пропонує індивідуальні ІТ-рішення, які заохочують до змін у бізнесах клієнтів в усьому світі.&lt;/p&gt;
+      &lt;p&gt;Luxoft об'єднує понад 13 000 спеціалістів із 22 країн світу за штаб-квартирою у м. Цуг, Швейцарія. Україна є однією з найпотужніших локацій у географії Luxoft. Близько 3500 фахівців усіх ключових напрямків зосереджені в офісах Києва, Одеси й Дніпра.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></p>
+</section>
+
+<section id="CSS-код (FLEXBOX)" data-indent="2">
+  <h2><b>CSS-код</b> FLEXBOX</h2>
+  <p><pre>:root{
+      --card-width: 280px;
+      --img-height: 180px;
+      --card-radius: 14px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:"Segoe UI", Roboto, Arial, sans-serif;
+      background:#fff;
+      color:#111;
+    }
+
+    /* ===== ХЕДЕР ===== */
+    header{
+      background:#fff;
+      padding:14px 20px;
+      border-bottom:1px solid #eee;
+      display:flex;
+      justify-content:center;
+    }
+
+    .nav{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+      position:relative;
+    }
+
+    .nav a, .nav .dropdown-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      background:#000;
+      color:#fff;
+      text-decoration:none;
+      padding:10px 18px;
+      border-radius:5px;
+      font-size:15px;
+      transition:background .2s ease;
+      position:relative;
+      cursor:pointer;
+    }
+
+    .nav a:hover,
+    .nav .dropdown-btn:hover{
+      background:#333;
+    }
+
+    .dropdown{
+      position:relative;
+      display:inline-block;
+    }
+
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      background:#111;
+      min-width:120px;
+      border-radius:5px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.2);
+      z-index:10;
+      overflow:hidden;
+    }
+
+    .dropdown-content a{
+      display:block;
+      padding:10px 14px;
+      color:#fff;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:500;
+      text-align:left;
+      transition:background 0.2s ease;
+    }
+
+    .dropdown-content a:hover{
+      background:#333;
+    }
+
+    .dropdown:hover .dropdown-content{
+      display:block;
+    }
+
+    .dropdown-btn::after{
+      content:"▼";
+      font-size:10px;
+      margin-left:6px;
+    }
+
+    /* ===== БЛОК ПРОГРАМИ ===== */
+    .program-section{
+      padding:56px 20px 80px;
+      text-align:center;
+      max-width:1300px;
+      margin:0 auto;
+    }
+
+    .program-section h2{
+      font-size:34px;
+      margin:0 0 36px;
+      font-weight:800;
+    }
+
+    .cards{
+      display:flex;
+      gap:24px;
+      justify-content:center;
+      align-items:stretch;
+      flex-wrap:wrap;
+    }
+
+    .card{
+      width:var(--card-width);
+      background:#fff;
+      border-radius:var(--card-radius);
+      box-shadow:0 8px 22px rgba(0,0,0,0.08);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{ transform:translateY(-6px); box-shadow:0 14px 30px rgba(0,0,0,0.12); }
+
+    .card .card-img img{
+      object-fit:cover;
+      object-position:center top;
+      display:block;
+      border:0;
+    }
+
+    .card .card-body{
+      padding:40px 18px 30px;
+      text-align:center;
+      background:#fff;
+    }
+    .card .card-body h3{
+      font-size:16px;
+      margin:0 0 10px;
+      font-weight:800;
+      line-height:1.2;
+    }
+    .card .card-body p{
+      margin:0;
+      color:#555;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .card.reverse .card-img{
+      order:1 !important;
+      margin-top:auto;
+    }
+    .card.reverse .card-body{
+      order:0 !important;
+    }
+
+    .card.reverse .card-img img{
+      object-position:center bottom !important;
+      border-bottom-left-radius:var(--card-radius);
+      border-bottom-right-radius:var(--card-radius);
+      border-top-left-radius:0;
+      border-top-right-radius:0;
+    }
+
+    .card:not(.reverse) .card-img img{
+      border-top-left-radius:var(--card-radius);
+      border-top-right-radius:var(--card-radius);
+      border-bottom-left-radius:0;
+      border-bottom-right-radius:0;
+    }
+
+    @media (max-width:980px){
+      :root{ --card-width:44%; }
+    }
+    @media (max-width:640px){
+      :root{ --card-width:100%; }
+    }
+
+    /* ===== БЛОК "ЯК ПРОХОДИТЬ НАВЧАННЯ" ===== */
+    .study-section{
+      background:#fff;
+      padding:70px 20px 90px;
+      text-align:center;
+    }
+
+    .study-section h2{
+      font-size:34px;
+      font-weight:800;
+      margin-bottom:46px;
+    }
+
+    .study-photos{
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      flex-wrap:wrap;
+    }
+
+    .study-photo{
+      position:relative;
+      width:320px;
+      aspect-ratio:1/1;
+      overflow:hidden;
+      border-radius:10px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.15);
+      background:#fff;
+      transition:transform 0.3s ease;
+    }
+
+    .study-photo:hover{
+      transform:scale(1.03) rotate(0deg);
+      z-index:2;
+    }
+
+    .study-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* ===== ПАРТНЕРИ ===== */
+    .partners-section{
+      background:#fff;
+      padding:90px 20px;
+    }
+
+    .partners-section h2{
+      text-align:center;
+      font-size:34px;
+      font-weight:800;
+      margin-bottom:60px;
+    }
+
+    .partner-block{
+      max-width:1000px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      gap:60px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .partner-logo {
+  position: relative;
+  background: #fff;
+  width: 500px;
+  height: 600px;
+  padding: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+    .partner-logo::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      top:10px;
+      left:-10px;
+    }
+
+    .partner-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+    .partner-text{
+      flex:1;
+      min-width:300px;
+      line-height:1.7;
+    }
+
+    .partner-text h3{
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .partner-text a{
+      color:#007bff;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .partner-text a:hover{
+      text-decoration:underline;
+    }
+
+    .partner-text p{
+      color:#333;
+      font-size:15px;
+      margin-bottom:10px;
+    }</pre></p>
+</section>
+
+<section id="concl">
+  <h2><b>Висновки</b></h2>
+  <p>У результаті виконання роботи я навчилась створювати макети веб-сторінок різних типів: табличні, блокові та на основі Flexbox. Flexbox забезпечує просту адаптивність і контроль над вирівнюванням елементів, що робить його ефективним інструментом сучасної верстки.</p>
+</section>
+
+<section id="questions">
+  <h2><b>Контрольні запитання</b></h2>
+  <p>
+  <ol>
+  <li><strong>Базові концепції верстки сторінок:</strong> блокова модель, позиціонування елементів, потокове розміщення.</li>
+
+  <li><strong>Фіксований макет:</strong> ширина задається в пікселях і не змінюється.<br>
+  <em>Переваги:</em> стабільність вигляду, легше тестувати.<br>
+  <em>Недоліки:</em> погана адаптація до різних екранів.</li>
+
+  <li><strong>Гумовий макет:</strong> ширина задається у відсотках і змінюється разом із вікном браузера.<br>
+  <em>Переваги:</em> краще використовує простір екрана.<br>
+  <em>Недоліки:</em> можливі спотворення при дуже малих або великих екранах.</li>
+
+  <li><strong>Еластичний макет:</strong> розміри задаються в одиницях em або rem, змінюються разом із розміром шрифту.<br>
+  <em>Переваги:</em> зручність для користувачів із різними налаштуваннями шрифту.<br>
+  <em>Недоліки:</em> складніше контролювати точний розмір елементів.</li>
+
+  <li><strong>Адаптивний макет:</strong> підлаштовується під різні розміри екранів за допомогою медіа-запитів.<br>
+  <em>Переваги:</em> зручний перегляд на всіх пристроях.<br>
+  <em>Недоліки:</em> потребує більше коду і тестування.</li>
+
+  <li><strong>Комбінований макет:</strong> поєднує різні типи (наприклад, фіксований + адаптивний).<br>
+  <em>Переваги:</em> гнучкість у дизайні, збереження контролю над структурою.<br>
+  <em>Недоліки:</em> складність реалізації та налагодження.</li>
+
+  <li><strong>Верстка за допомогою таблиці:</strong><br>
+  Створюється таблиця в HTML (&lt;table&gt;, &lt;tr&gt;, &lt;td&gt;), кожна комірка — це окремий блок сторінки. Оформлення здійснюється через CSS (рамки, відступи, кольори).</li>
+
+  <li><strong>Верстка за допомогою плаваючих блоків:</strong><br>
+  Елементи розмічаються тегами &lt;div&gt;, для розташування використовується властивість <code>float</code> у CSS (наприклад, <code>float: left;</code> або <code>float: right;</code>), а очищення потоку виконується через <code>clear</code>.</li>
+</ol>
+</p>
+</section>

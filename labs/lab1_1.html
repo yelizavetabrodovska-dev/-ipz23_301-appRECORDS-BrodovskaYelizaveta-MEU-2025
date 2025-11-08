@@ -1,0 +1,102 @@
+<section id="topic">
+  <h2>Тема, мета та місце розташування</h2>
+  <p><b>Тема:</b> Структура HTML-документа</p>
+  <p><b>Мета:</b> Ознайомитись із базовою структурою HTML-документа, навчитися створювати елементи сторінки, таблиці, форми та вставляти зображення.</p>
+  <p><b>Місце розташування:</b> <a href="http://github.com/yelizavetabrodovska-dev/ipz22_301--app-INDEPENDENT-YelyzavetaBrodovska-MEU-2025" target="_blank">GitHub</a></p>
+</section>
+
+<section id="desc">
+  <h2>Опис предметного середовища</h2>
+  <p>Розробка вебзастосунку для онлайн-платформи <b>HealthyFood</b>, що містить колекцію рецептів здорової їжі з можливістю пошуку, фільтрації за категоріями, перегляду детальної інформації та додавання власних рецептів користувачами. 
+Мета проєкту - створити зручний вебсайт, який допомагає користувачам знаходити рецепти корисних страв, переглядати їхній склад, калорійність і спосіб приготування, а також ділитися власними ідеями здорового харчування.
+Ціль — популяризувати здоровий спосіб життя, спростити планування раціону та надихнути користувачів на приготування поживних і смачних страв у домашніх умовах. 
+Сценарій використання сайту: Користувач заходить на сайт і бачить каталог рецептів із фото, коротким описом і вказаною калорійністю.
+Він може скористатися пошуком, щоб знайти, наприклад, “сніданки до 300 ккал” чи “веганські обіди”.
+Обравши рецепт, користувач переходить на детальну сторінку, де відображаються: список інгредієнтів, покрокова інструкція приготування, час, калорійність на порцію та категорія страви.
+Зареєстрований користувач має змогу:
+1. додавати власні рецепти через спеціальну форму (із фото, описом та інгредієнтами);
+2. редагувати чи видаляти свої публікації;
+3. зберігати улюблені страви у розділі “Мої рецепти”.
+Адміністратор сайту може:
+1. переглядати всі рецепти;
+2. підтверджувати або видаляти додані користувачами рецепти;
+3. керувати категоріями страв (сніданки, обіди, вечері, десерти тощо).</p>
+</section>
+
+<section id="Структура документа">
+  <h2>Структура документа</h2>
+  <pre class="codes">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;HealthyFood&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;Заголовок сайту&lt;/header&gt;
+    &lt;nav&gt;Меню&lt;/nav&gt;
+    &lt;main&gt;Основний контент&lt;/main&gt;
+    &lt;footer&gt;Підвал сторінки&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </pre>
+</section>
+
+<section id="HTML-код таблиць" data-indent="2">
+  <h2>HTML-код таблиць</h2>
+  <table border="1">
+    <tr><th>Назва</th><th>Категорія</th></tr>
+    <tr><td>Ham, Egg & Sprouts Breakfast Sandwich</td><td>Breakfast</td></tr>
+    <tr><td>Triple-Berry Blended Oats</td><td>Vegan</td></tr>
+    <tr><td>Mango Raspberry Smoothie</td><td>Desserts</td></tr>
+  </table>
+  <pre class="codes">
+    &lt;table border="1"&gt;
+    &lt;tr&gt;&lt;th&gt;Назва&lt;/th&gt;&lt;th&gt;Категорія&lt;/th&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Ham, Egg &amp; Sprouts Breakfast Sandwich&lt;/td&gt;&lt;td&gt;Breakfast&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Triple-Berry Blended Oats&lt;/td&gt;&lt;td&gt;Vegan&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Mango Raspberry Smoothie&lt;/td&gt;&lt;td&gt;Desserts&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  </pre>
+</section>
+
+<section id="HTML-код форми" data-indent="2">
+  <h2>HTML-код форми</h2>
+  <form>
+    <label for="name">Ім’я:</label><br />
+<input id="name" type="text" placeholder="Введіть ваше ім’я"><br />
+
+<label for="email">Email:</label><br />
+<input id="email" type="email" placeholder="example@gmail.com"><br />
+
+<label for="message">Повідомлення:</label><br />
+<textarea id="message" placeholder="Ваш текст..."></textarea><br />
+    <button>Надіслати</button>
+  </form>
+
+  <pre class="codes">
+&lt;form&gt;
+  &lt;label for="name"&gt;Ім’я:&lt;/label&gt;&lt;br /&gt;
+  &lt;input id="name" type="text" placeholder="Введіть ваше ім’я"&gt;&lt;br /&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;&lt;br /&gt;
+  &lt;input id="email" type="email" placeholder="example@gmail.com"&gt;&lt;br /&gt;
+
+  &lt;label for="message"&gt;Повідомлення:&lt;/label&gt;&lt;br /&gt;
+  &lt;textarea id="message" placeholder="Ваш текст..."&gt;&lt;/textarea&gt;&lt;br /&gt;
+
+  &lt;button&gt;Надіслати&lt;/button&gt;
+&lt;/form&gt;
+</pre>
+</section>
+
+<section id="HTML-код зображення" data-indent="2">
+  <h2>HTML-код зображення</h2>
+  <p>Приклад додавання зображення страви:</p>
+  <img src="images/v2.jpg" alt="Фото страви" width="200">
+  <pre class="codes">&lt;img src="images/v2.jpg" alt="Фото страви" width="250"&gt;</pre>
+</section>
+
+<section id="concl">
+  <h2>Висновки</h2>
+  <p>У ході виконання лабораторної роботи я ознайомилась зі структурою HTML-документа, розглянула основні теги, створила таблицю, форму зворотного зв’язку та вставила зображення. Отримані знання є базовими для подальшого вивчення CSS і JavaScript.</p>
+</section>

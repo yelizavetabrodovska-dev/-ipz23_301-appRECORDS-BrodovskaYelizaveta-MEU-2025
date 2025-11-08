@@ -1,0 +1,193 @@
+/* ===== БАЗА ===== */
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  background: #FFFCF4;
+  color: #222;
+}
+
+/* ===== ШАПКА ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #092509;
+  color: #ffffff;
+  padding: 75px 75px;
+}
+
+.header-info h1 {
+  margin-left: 650px;
+  font-size: 28px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.header-info h3 {
+  margin-left: 650px;
+  font-weight: normal;
+  font-size: 20px;
+  flex: 1;
+  text-align: center;
+}
+
+.header-info p {
+  margin-left: 650px;
+  font-size: 16px;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.student-photo img {
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  object-fit: cover;
+  margin-left: 40px;
+}
+
+/* ===== КНОПКИ ЛАБОРАТОРНИХ ===== */
+.lab-nav {
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  padding: 15px 20px;
+  gap: 15px;
+}
+
+.lab-btn {
+  background: #d9e1d3;
+  border: 3px solid #8b9b7a;
+  border-radius: 30px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
+}
+
+.lab-btn:hover {
+  background: #cfdac7;
+}
+
+.lab-btn.active {
+  background: #072707;
+  color: #fff;
+  border-color: #055005;
+}
+
+/* ===== ОСНОВНА ЧАСТИНА ===== */
+.main-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px 40px;
+}
+
+/* ===== МЕНЮ ЗЛІВА ===== */
+.sidebar {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.side-btn {
+  background: #d9e1d3;
+  border: 3px solid #8b9b7a;
+  border-radius: 20px;
+  padding: 10px 25px;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.side-btn:hover {
+  background: #cfdac7;
+}
+
+.side-btn.active {
+  background: #072707;
+  color: #fff;
+  border-color: #055005;
+}
+
+/* ===== ОБЛАСТЬ ВИВЕДЕННЯ ===== */
+.main-area {
+  flex: 1;
+  background: #e5e7de;
+  border-radius: 20px;
+  box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  overflow-y: auto;
+  min-height: 400px;
+  font-size: 16px;
+   line-height: 1.6;
+}
+
+.main-area table {
+  width: 50%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 17px;
+}
+
+.main-area th,
+.main-area td {
+  border: 1px solid #144d2b;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.main-area th {
+  background-color: #cfdac7;
+  font-weight: bold;
+}
+
+.main-area img {
+  display: block;
+  width: 95%;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.placeholder {
+  color: #6c6c6c;
+  text-align: center;
+  margin-top: 200px;
+}
+
+.codes {
+  display: block;
+  font-family: monospace;
+  font-size: 14px;
+  unicode-bidi: isolate;
+  white-space: pre;
+  margin-block: 1em 1em;
+  margin-inline: 0px;
+}
+
+/* Відступи для вкладених кнопок */
+.indent-1 {
+  margin-left: 20px;
+}
+
+.indent-2 {
+  margin-left: 40px;
+}
+
+.indent-3 {
+  margin-left: 60px;
+}
+
+#text_example {
+  font-family: 'Poppins', sans-serif;
+  color: #AF1FCC;
+  background-color: #e5e7de;
+  font-size: 20px;
+  text-shadow: 2px 2px 6px rgba(175, 31, 204, 0.4);
+  margin: 10px 0;
+}

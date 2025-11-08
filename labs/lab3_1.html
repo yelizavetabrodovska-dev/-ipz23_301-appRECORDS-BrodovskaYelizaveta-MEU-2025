@@ -1,0 +1,344 @@
+<section id="topic">
+  <h2>Тема, мета та місце розташування сайту, звіту</h2>
+  <p><b>Тема:</b> ФУНКЦІОНАЛЬНЕ ЗАСТОСУВАННЯ JAVASCRIPT У HTML-ДОКУМЕНТІ. ВИКОРИСТАННЯ МАСИВІВ У JS-СЦЕНАРІЯХ. РЕАЛІЗАЦІЯ ПРОГРАМ ЗАСОВАМИ МОВИ JAVASCRIPT</p>
+  <p><b>Мета:</b> придбати практичні навички роботи з конструкціями мови JS, масивами та фугкціями у js-сценаріях.  Реалізація програм засовами мови JAVASCRIPT</p>
+  <p><b>Місце розташування:</b> 
+    <ol>
+      <li><a href="https://github.com/yelizavetabrodovska-dev/-ipz23_301-appWEB-BrodovskaYelizaveta-MEU-2025" target="_blank">Посилання на репозиторій  власного WEB-застосунку</a></li>
+      <li><a href="https://yelizavetabrodovska-dev.github.io/-ipz23_301-appWEB-BrodovskaYelizaveta-MEU-2025/" target="_blank">Посилання на репозиторій на живу сторінку  власного WEB-застосунку</a></li>
+      <li><a href="https://github.com/yelizavetabrodovska-dev/-ipz23_301-appRECORDS-BrodovskaYelizaveta-MEU-2025" target="_blank">Посилання на репозиторій звітного HTML-документа</a></li>
+      <li><a href="https://yelizavetabrodovska-dev.github.io/-ipz23_301-appRECORDS-BrodovskaYelizaveta-MEU-2025/" target="_blank">Посилання на репозиторій на  живу сторінку  звітного HTML-документ</a></li></ol>
+</section>
+
+<section id="ЗАВДАННЯ №1">
+  <h2><b>ЗАВДАННЯ №1</b></h2>
+  <p>
+<pre>function makeTransaction(quantity, pricePerDroid) {
+  const totalPrice = quantity * pricePerDroid;
+  return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+}
+
+console.log(makeTransaction(5, 3000));
+console.log(makeTransaction(10, 1000));</pre>
+  </p>
+  <p><b>Результат виконання:</b></p>
+  <img src="images/res1.png" alt="Result 1">
+</section>
+
+<section id="ЗАВДАННЯ №2">
+  <h2><b>ЗАВДАННЯ №2</b></h2>
+  <p>
+<pre>function checkForSpam(message) {
+  const lowerMessage = message.toLowerCase();
+  return lowerMessage.includes("spam") || lowerMessage.includes("sale");
+}
+console.log(checkForSpam("Latest technology news"));     
+console.log(checkForSpam("Get best SALE offers now!"));  
+console.log(checkForSpam("Beware of SPAM messages"));    
+console.log(checkForSpam("Trustworthy deal, no spam here"));
+console.log(checkForSpam("Just chatting with friends"));</pre>
+<p><b>Результат виконання:</b></p>
+<img src="images/res2.png" alt="Result 2">
+  </p>
+</section>
+
+<section id="ЗАВДАННЯ №3">
+  <h2><b>ЗАВДАННЯ №3</b></h2>
+  <h3>1.</h3>
+  <p>
+<pre>function filterArray(numbers, value) {
+  const filteredNumbers = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > value) {
+      filteredNumbers.push(numbers[i]);
+    }
+  }
+
+  return filteredNumbers;
+}
+console.log(filterArray([1, 2, 3, 4, 5], 3));
+console.log(filterArray([10, 15, 20, 25], 17));
+console.log(filterArray([5, 4, 3, 2, 1], 5));</pre>
+  </p>
+  <p><b>Результат виконання:</b></p>
+<img src="images/res3_1.png" alt="Result 3_1">
+
+<h3>2.</h3>
+
+<p><pre>function makeArray(firstArray, secondArray, maxLength) {
+  const newArray = firstArray.concat(secondArray);
+
+  if (newArray.length > maxLength) {
+    return newArray.slice(0, maxLength);
+  }
+
+  return newArray;
+}
+
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
+
+console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 10));</pre></p>
+<p><b>Результат виконання:</b></p>
+<img src="images/res3_2.png" alt="Result 3_2">
+</section>
+
+<section id="ЗАВДАННЯ №4">
+  <h2><b>ЗАВДАННЯ №4</b></h2>
+  <p>
+<pre>// Функція для створення масиву заданої довжини з випадковими числами
+function createArray(length) {
+  const arr = [];
+  for (let i = 0; i < length; i++) {
+    arr.push(Math.floor(Math.random() * 100)); // випадкові числа 0–99
+  }
+  return arr;
+}
+
+// Функція для знаходження максимального серед парних елементів
+function findMaxEvenElement(arr) {
+  let maxEven = null;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      if (maxEven === null || arr[i] > maxEven) {
+        maxEven = arr[i];
+      }
+    }
+  }
+  return maxEven;
+}
+
+// Функція для знаходження мінімального серед елементів із парними індексами
+function findMinEvenIndexElement(arr) {
+  let minEvenIndex = arr[0];
+  for (let i = 0; i < arr.length; i += 2) {
+    if (arr[i] < minEvenIndex) {
+      minEvenIndex = arr[i];
+    }
+  }
+  return minEvenIndex;
+}
+
+// Функція для обміну місцями двох елементів у масиві
+function swapElements(arr, val1, val2) {
+  const index1 = arr.indexOf(val1);
+  const index2 = arr.indexOf(val2);
+  if (index1 !== -1 && index2 !== -1) {
+    const temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
+  }
+  return arr;
+}
+
+// Функція для сортування масиву методом вставки
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let current = arr[i];
+    let j = i - 1;
+    while (j >= 0 && arr[j] > current) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+    arr[j + 1] = current;
+  }
+  return arr;
+}
+
+// === Основна програма ===
+const n = parseInt(prompt("Введіть кількість елементів масиву:"), 6);
+let array = createArray(n);
+
+console.log("Вхідний масив:", array);
+
+const maxEven = findMaxEvenElement(array);
+const minEvenIndex = findMinEvenIndexElement(array);
+
+console.log("Максимальний серед парних елементів:", maxEven);
+console.log("Мінімальний серед елементів з парними індексами:", minEvenIndex);
+
+// Міняємо місцями знайдені елементи
+array = swapElements(array, maxEven, minEvenIndex);
+console.log("Масив після обміну:", array);
+
+// Сортування методом вставки
+const sortedArray = insertionSort([...array]);
+console.log("Масив після сортування вставками:", sortedArray);
+</pre>
+<p><b>Результат виконання:</b></p>
+<img src="images/res4.png" alt="Result 4">
+  </p>
+</section>
+
+<section id="ЗАВДАННЯ №5">
+  <h2><b>ЗАВДАННЯ №5</b></h2>
+  <p>
+<pre>// --- Перевірка чисел ---
+const isInteger = (s) => /^[-+]?\d+$/.test(s.trim());
+const isFloat = (s) => /^[-+]?((\d+\.\d+)|(\d+\.)|(\.\d+)|(\d+))$/.test(s.trim());
+
+// --- Перевірка дати у форматі DD.MM.YYYY ---
+function parseDateDDMMYYYY(s) {
+  const m = s.trim().match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+  if (!m) return null;
+
+  const day = Number(m[1]);
+  const month = Number(m[2]);
+  const year = Number(m[3]);
+
+  if (month < 1 || month > 12) return null;
+  const mdays = [31, (isLeap(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  if (day < 1 || day > mdays[month - 1]) return null;
+
+  return { day, month, year };
+}
+
+function isLeap(y) {
+  return (y % 4 === 0 && y % 100 !== 0) || (y % 400 === 0);
+}
+
+// --- Відображення / очищення помилок ---
+function showError(name, msg) {
+  const el = document.querySelector(`.error[data-for="${name}"]`);
+  const input = document.getElementById(name);
+  if (msg) {
+    el.textContent = msg;
+    input.parentElement.classList.add('has-error');
+  } else {
+    el.textContent = '';
+    input.parentElement.classList.remove('has-error');
+  }
+}
+
+// --- Валідатори полів ---
+const validators = {
+  username: (v) => {
+    if (!v) return "Поле обов'язкове.";
+    if (v.length < 3 || v.length > 30) return "Ім'я користувача має бути від 3 до 30 символів.";
+    return '';
+  },
+  email: (v) => {
+    if (!v) return "Поле обов'язкове.";
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!re.test(v)) return 'Невірний формат email.';
+    return '';
+  },
+  age: (v) => {
+    if (!v) return '';
+    if (!isInteger(v)) return 'Потрібне ціле число.';
+    return '';
+  },
+  height: (v) => {
+    if (!v) return '';
+    if (!isFloat(v)) return 'Потрібне дійсне число (десяткова крапка ".").';
+    return '';
+  },
+  birthdate: (v) => {
+    if (!v) return "Поле обов'язкове.";
+    if (!parseDateDDMMYYYY(v)) return 'Невірна дата. Використайте формат DD.MM.YYYY.';
+    return '';
+  },
+  password: (v) => {
+    if (!v) return "Поле обов'язкове.";
+    if (v.length < 6) return 'Мінімум 6 символів.';
+    return '';
+  },
+  confirm_password: (v) => {
+    const pw = document.getElementById('password').value || '';
+    if (!v) return "Поле обов'язкове.";
+    if (v !== pw) return 'Паролі не співпадають.';
+    return '';
+  }
+};
+
+// --- Перевірка одного поля ---
+function validateField(name) {
+  const input = document.getElementById(name);
+  const fn = validators[name];
+  if (!fn) return true;
+  const err = fn(input.value);
+  showError(name, err);
+  return !err;
+}
+
+// --- Реакція на події введення ---
+document.querySelectorAll('#regForm input').forEach(el => {
+  el.addEventListener('input', () => validateField(el.id));
+  el.addEventListener('blur', () => validateField(el.id));
+});
+
+// --- Обробка відправлення форми ---
+document.getElementById('regForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const names = ['username', 'email', 'age', 'height', 'birthdate', 'password', 'confirm_password'];
+  let firstInvalid = null;
+  let ok = true;
+
+  names.forEach(name => {
+    const valid = validateField(name);
+    if (!valid) {
+      ok = false;
+      if (!firstInvalid) firstInvalid = document.getElementById(name);
+    }
+  });
+
+  const result = document.getElementById('result');
+  if (!ok) {
+    result.innerHTML = '<div class="error">Будь ласка, виправте помилки у формі.</div>';
+    firstInvalid.focus();
+    return;
+  }
+
+  const data = {
+    username: this.username.value.trim(),
+    email: this.email.value.trim(),
+    age: this.age.value.trim() || null,
+    height: this.height.value.trim() || null,
+    birthdate: this.birthdate.value.trim()
+  };
+
+  result.innerHTML = `
+    <div class="success">
+      Реєстрація успішна!<br>
+      <small>Надіслані дані (демо):</small>
+      <pre>${JSON.stringify(data, null, 2)}</pre>
+    </div>`;
+  this.reset();
+});
+</pre>
+  </p>
+  <p><ol><b>Результат виконання:</b>
+  <li>Якщо дані введено правильно
+    <p><img src="images/true.png" alt="Result 5_1"></p>
+  </li>
+  <li>Якщо дані введено неправильно
+    <p><img src="images/false.png" alt="Result 5_2"></p>
+  </li>
+  </ol></p>
+
+</section>
+
+<section id="concl">
+  <h2>Висновки</h2>
+<p>У ході виконання роботи було створено HTML-форму реєстрації користувача з перевіркою правильності введення даних.<br>
+Було реалізовано такі етапи:</p>
+
+
+<ul>
+<li>Створено структуру форми з обов’язковими полями: ім’я користувача, вік, дата народження, пароль та підтвердження пароля.</li>
+<li>Реалізовано клієнтську валідацію засобами JavaScript:</li>
+<ul>
+<li>перевірка введення цілого числа (для віку);</li>
+<li>перевірка дійсного числа (для зарплати);</li>
+<li>перевірка дати у форматі <strong>DD.MM.YYYY</strong>;</li>
+<li>перевірка співпадіння паролів;</li>
+<li>контроль заповнення обов’язкових полів, позначених символом <strong>(*)</strong>.</li>
+</ul>
+<li>Додано виведення повідомлень про помилки біля відповідних полів.</li>
+<li>У разі успішного заповнення форми виводиться коротке зведення введених даних.</li>
+</ul>
+
+
+<h3>Результат:</h3>
+<p>Було розроблено функціональну форму з гнучкою перевіркою введення, що забезпечує коректність даних перед їх надсиланням на сервер. Отримані знання можна застосовувати для створення реальних веб-форм реєстрації, авторизації або зворотного зв’язку.</p>
+</section>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Звіти з лабораторних робіт</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-info">
+      <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ</h1>
+      <h3>З дисципліни «Програмування інтернет-застосувань»</h3>
+      <p>Студент групи ІПЗ-23-301 | Бродовська Єлизавета Романівна</p>
+    </div>
+    <div class="student-photo">
+      <img src="images/photo.jpg" alt="Фото студента" />
+    </div>
+  </header>
+
+  <nav class="lab-nav">
+    <button class="lab-btn active" data-lab="1_1">Лабораторна робота №1.1</button>
+    <button class="lab-btn" data-lab="1_2">Лабораторна робота №1.2</button>
+    <button class="lab-btn" data-lab="2_1">Лабораторна робота №2.1</button>
+    <button class="lab-btn" data-lab="2_2">Лабораторна робота №2.2</button>
+    <button class="lab-btn" data-lab="3_1">Лабораторна робота №3.1</button>
+    <button class="lab-btn" data-lab="3_2">Лабораторна робота №3.2</button>
+    <button class="lab-btn" data-lab="4_1">Лабораторна робота №4.1</button>
+    <button class="lab-btn" data-lab="4_2">Лабораторна робота №4.2</button>
+  </nav>
+
+  <div class="main-layout">
+    <aside id="sideMenu" class="sidebar"></aside>
+
+    <main id="mainContent" class="main-area">
+      <p class="placeholder">Оберіть лабораторну роботу або пункт меню</p>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
