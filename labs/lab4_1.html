@@ -1,15 +1,329 @@
 <section id="topic">
   <h2>Тема, мета та місце розташування</h2>
+  <p><b>Тема:</b>  ОБ'ЄКТ. МЕТОДИ ОБ'ЄКТА. МАСИВ ОБ'ЄКТІВ. ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ. CALLBACK. СТРІЛОЧНІ ФУНКЦІЇ. СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ.</p>
+    <p><b>Мета:</b> придбати практичні навички роботи з об'єктами. Методи об'єкта. Callback. Стрілочні функції. Стрілочні функції як колбеки. Реалізація програм засовами мови JAVASCRIPT.</p> 
+</p><b>Місце розташування:</b> <a href="http://github.com/yelizavetabrodovska-dev/ipz22_301--app-INDEPENDENT-YelyzavetaBrodovska-MEU-2025" target="_blank">GitHub</a></p>
 </section>
 
-<section id="desc">
-  <h2>Хід виконання роботи</h2>
-</section>
+<!-- Завдання 1 -->
+    <section id="Завдання №1" data-indent="2">
+        <h2>Завдання №1</h2>
+        <p>У звітному HTML-документі створити html-розміту, яка складається з наступних елементів : текст, кнопка, поле введення. Натискання на кнопку "SHOW ME" має виводити значення з поля введення у консолі.</p>
+        
+        <div>
+            <input type="text" id="input1" placeholder="Введіть текст">
+            <button id="showBtn">SHOW ME</button>
+        </div>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+document.getElementById('showBtn').addEventListener('click', function() {
+    const inputValue = document.getElementById('input1').value;
+    console.log('Введене значення:', inputValue);
+});</pre>
+    </section>
 
-<section id="concl">
-  <h2>Висновки</h2>
-</section>
+<!-- Завдання 1 -->
+    <section id="Завдання №1" data-indent="2">
+        <h2>Завдання №1</h2>
+        <p>У звітному HTML-документі створити html-розміту, яка складається з наступних елементів : текст, кнопка, поле введення. Натискання на кнопку "SHOW ME" має виводити значення з поля введення у консолі.</p>
+        
+        <div>
+            <input type="text" id="input1" placeholder="Введіть текст">
+            <button id="showBtn">SHOW ME</button>
+        </div>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+document.getElementById('showBtn').addEventListener('click', function() {
+    const inputValue = document.getElementById('input1').value;
+    console.log('Введене значення:', inputValue);
+});</pre>
+    </section>
 
-<section id="questions">
-  <h2>Контрольні запитання</h2>
-</section>
+    <!-- Завдання 3 -->
+    <section id="Завдання №3" data-indent="2">
+        <h2>Завдання №3</h2>
+        <p>У звітному HTML-документі створити html-розміту, яка складається з наступних елементів : текст, кнопка, інпут (поле введення). Кнопка "Приховати" ховає текст, виводячи зірочки замість введеної інформації, замінює назву кнопки на "Розкрити", при повторному натисканні текст знову стає доступним і кнопка набуває початкового вигляду.</p>
+        
+        <div>
+            <input type="text" id="passwordInput" placeholder="Введіть текст">
+            <button id="toggleVisibilityBtn">Приховати</button>
+        </div>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+const toggleBtn = document.getElementById('toggleVisibilityBtn');
+const passwordInput = document.getElementById('passwordInput');
+
+toggleBtn.addEventListener('click', function() {
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleBtn.textContent = 'Приховати';
+    } else {
+        passwordInput.type = 'password';
+        toggleBtn.textContent = 'Розкрити';
+    }
+});</pre>
+    </section>
+
+    <!-- Завдання 5 -->
+    <section id="Завдання №5" data-indent="2">
+        <h2>Завдання №5</h2>
+        <p>У звітному HTML-документі створити html-розміту, яка складається з наступних елементів : текст, з використанням селектора класу (class="taskTitle"), div, з використанням селектора ідентифікатора (id="place"). Додайте слухач кліку на window і визначте чи клікнув користувач у div з id="place". Якщо користувач клікнув на зеленому прямокутнику - у консолі виведе true. У протилежному випадку - false.</p>
+        
+        <div class="taskTitle">Клікніть тут або поза межами зеленого блоку</div>
+        <div id="place">Клікніть тут</div>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+window.addEventListener('click', function(event) {
+    const placeElement = document.getElementById('place');
+    const clickedInside = placeElement.contains(event.target);
+    console.log('Клік в межах блоку #place:', clickedInside);
+});</pre>
+    </section>
+
+    <!-- Завдання 7 -->
+    <section id="Завдання №7" data-indent="2">
+        <h2>Завдання №7</h2>
+        <p>HTML містить список категорій ul#categories. Напиши скрипт, який: 1. Порахує і виведе в консоль кількість категорій в ul#categories. 2. Для кожного элемента li.item у списку ul#categories, знайде і виведе в консоль текст заголовку елемента (тегу h2) і кількість елементів в категорії (усіх li, вкладених в нього).</p>
+        
+        <ul id="categories">
+            <li class="item">
+                <h2>Animals</h2>
+                <ul>
+                    <li>Cat</li>
+                    <li>Hamster</li>
+                    <li>Horse</li>
+                    <li>Parrot</li>
+                </ul>
+            </li>
+            <li class="item">
+                <h2>Products</h2>
+                <ul>
+                    <li>Bread</li>
+                    <li>Prasley</li>
+                    <li>Cheese</li>
+                </ul>
+            </li>
+            <li class="item">
+                <h2>Technologies</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <button id="analyzeCategoriesBtn">Проаналізувати категорії</button>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+document.getElementById('analyzeCategoriesBtn').addEventListener('click', function() {
+    const categories = document.querySelectorAll('#categories .item');
+    console.log(`Загальна кількість категорій: ${categories.length}`);
+    
+    categories.forEach(category => {
+        const title = category.querySelector('h2').textContent;
+        const items = category.querySelectorAll('li').length - 1;
+        console.log(`Категорія: ${title}, Кількість елементів: ${items}`);
+    });
+});</pre>
+    </section>
+
+    <!-- Завдання 8 -->
+    <section id="Завдання №8" data-indent="2">
+        <h2>Завдання №8</h2>
+        <p>Напиши скрипт управління формою логіна. 1. Обробка відправлення форми form.login-form повинна відбуватися за подією submit. 2. Під час відправлення форми сторінка не повинна перезавантажуватися. 3. Якщо при сабміті у формі є незаповнені поля, виводь alert з попередженням. 4. Якщо користувач заповнив усі поля, збери значення полів в об'єкт і виведи в консоль. 5. Очисти значення полів форми методом reset.</p>
+        
+        <form class="login-form">
+            <label>
+                Email
+                <input type="email" name="email">
+            </label>
+            <label>
+                Password
+                <input type="password" name="password">
+            </label>
+            <button type="submit">Log in</button>
+        </form>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+document.querySelector('.login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const email = form.elements.email.value.trim();
+    const password = form.elements.password.value.trim();
+    
+    if (!email || !password) {
+        alert('All form fields must be filled in');
+        return;
+    }
+    
+    const formData = {
+        email: email,
+        password: password
+    };
+    
+    console.log('Дані форми:', formData);
+    form.reset();
+});</pre>
+    </section>
+
+    <!-- Завдання 9 -->
+    <section id="Завдання №9" data-indent="2">
+        <h2>Завдання №9</h2>
+        <p>Напиши скрипт, який змінює колір фону елемента body через інлайн-стиль по кліку на button.change-color і задає це значення кольору текстовим вмістом для span.color.</p>
+        
+        <div class="widget">
+            <p>Background color: <span class="color">-</span></p>
+            <button type="button" class="change-color">Change color</button>
+        </div>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, 0)}`;
+}
+
+document.querySelector('.change-color').addEventListener('click', function() {
+    const randomColor = getRandomHexColor();
+    document.body.style.backgroundColor = randomColor;
+    document.querySelector('.color').textContent = randomColor;
+});</pre>
+    </section>
+
+    <!-- Завдання 10 -->
+    <section id="Завдання №10" data-indent="2">
+        <h2>Завдання №10</h2>
+        <p>Напиши скрипт створення й очищення колекції елементів з наступним функціоналом. Є input, у який користувач вводить бажану кількість елементів. Після натискання на кнопку Create має рендеритися колекція з відповідною кількістю елементів. Після натискання на кнопку Destroy колекція елементів має очищатися.</p>
+        
+        <div id="controls">
+            <input type="number" min="1" max="100" step="1">
+            <button type="button" data-create>Create</button>
+            <button type="button" data-destroy>Destroy</button>
+        </div>
+        
+        <div id="boxes" class="boxes-container"></div>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, 0)}`;
+}
+
+function createBoxes(amount) {
+    const boxesContainer = document.getElementById('boxes');
+    boxesContainer.innerHTML = '';
+    
+    let size = 30;
+    
+    for (let i = 0; i < amount; i++) {
+        const box = document.createElement('div');
+        box.classList.add('box');
+        box.style.width = `${size}px`;
+        box.style.height = `${size}px`;
+        box.style.backgroundColor = getRandomHexColor();
+        box.textContent = i + 1;
+        boxesContainer.appendChild(box);
+        
+        size += 10;
+    }
+}
+
+function destroyBoxes() {
+    document.getElementById('boxes').innerHTML = '';
+}
+
+document.querySelector('[data-create]').addEventListener('click', function() {
+    const amount = parseInt(document.querySelector('#controls input').value);
+    
+    if (amount >= 1 && amount <= 100) {
+        createBoxes(amount);
+        document.querySelector('#controls input').value = '';
+    } else {
+        alert('Будь ласка, введіть число від 1 до 100');
+    }
+});
+
+document.querySelector('[data-destroy]').addEventListener('click', destroyBoxes);</pre>
+    </section>
+
+    <!-- Делегування подій -->
+    <section id="Делегування подій" data-indent="2">
+        <h2>Делегування подій</h2>
+        <p>При виборі елемента в колекції елементів повинне відкритись модальне вікно, яке містиме опис цього елемента.</p>
+        
+        <div class="product-list">
+            <div class="product-item" data-id="1" data-name="Ноутбук" data-description="Потужний ноутбук для роботи та розваг. Характеристики: процесор Intel Core i7, 16 ГБ оперативної пам'яті, SSD на 512 ГБ.">
+                Ноутбук
+            </div>
+            <div class="product-item" data-id="2" data-name="Смартфон" data-description="Сучасний смартфон з потрійною камерою. Характеристики: екран 6.5 дюймів, 128 ГБ пам'яті, потрійна основна камера 48 Мп.">
+                Смартфон
+            </div>
+            <div class="product-item" data-id="3" data-name="Навушники" data-description="Бездротові навушники з шумозаглушенням. Характеристики: час роботи до 30 годин, підтримка Bluetooth 5.0, водостійкість IPX4.">
+                Навушники
+            </div>
+        </div>
+        
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+const productList = document.querySelector('.product-list');
+const modal = document.getElementById('productModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalDescription = document.getElementById('modalDescription');
+const closeBtn = document.querySelector('.close');
+
+// Делегування події кліку на батьківському елементі
+productList.addEventListener('click', function(event) {
+    const productItem = event.target.closest('.product-item');
+    
+    if (productItem) {
+        const name = productItem.dataset.name;
+        const description = productItem.dataset.description;
+        
+        modalTitle.textContent = name;
+        modalDescription.textContent = description;
+        modal.style.display = 'flex';
+    }
+});
+
+// Закриття модального вікна
+closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});</pre>
+    </section>
+
+    <section id="concl">
+        <h2>Висновки</h2>
+        <p>
+            У ході виконання лабораторної роботи №7 я придбала практичні навички роботи з DOM, подіями та делегуванням подій. 
+            Було реалізовано різноманітні завдання, що демонструють роботу з елементами сторінки, обробку подій, 
+            створення модальних вікон та взаємодію з формами. Особливу увагу було приділено делегуванню подій, 
+            що дозволяє ефективно обробляти події на динамічно створених елементах.
+        </p>
+    </section>

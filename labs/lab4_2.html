@@ -1,15 +1,1050 @@
-<section id="topic">
-  <h2>Тема, мета та місце розташування</h2>
-</section>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №8</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        button:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+        input, textarea {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        /* Стилі для галереї */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 0;
+            list-style: none;
+        }
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Стилі для форми зворотного зв'язку */
+        .feedback-form {
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        .feedback-form label {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .feedback-form input,
+        .feedback-form textarea {
+            margin-top: 5px;
+        }
+        
+        /* Стилі для таймера */
+        .timer {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .field {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #7f8c8d;
+        }
+        
+        /* Стилі для генератора промісів */
+        .form {
+            max-width: 400px;
+        }
+        .form fieldset {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .form legend {
+            padding: 0 10px;
+        }
+        .form label {
+            display: block;
+            margin: 5px 0;
+        }
+        
+        /* Стилі для пошуку зображень */
+        .search-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .search-form input {
+            flex: 1;
+        }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .image-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .image-info {
+            padding: 10px;
+            background-color: white;
+        }
+        .image-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .loader {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .loader::after {
+            content: "";
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Стилі для кошика з пагінацією */
+        .cart {
+            margin: 20px 0;
+        }
+        .cart-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .cart-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+        .cart-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .pagination button {
+            padding: 5px 10px;
+        }
+        .pagination button.active {
+            background-color: #2c3e50;
+        }
+    </style>
+    <!-- Підключення бібліотек -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.2/dist/simple-lightbox.min.css">
+</head>
+<body>
+    <section id="topic">
+        <h2>Тема, мета та місце розташування</h2>
+        <p><b>Тема:</b> NODE.JS. МОДУЛЬНІСТЬ КОДУ. JSON. WEB STORAGE API. АСИНХРОННІСТЬ. ПРОМІСИ. HTTP-ЗАПИТИ. REST API.</p>
+        <p><b>Мета:</b> придбати практичні навички роботи з Web Storage API, асинхронністю, промісами, HTTP-запитами та REST API.</p>
+        <p><b>Місце розташування:</b> <a href="http://github.com/yelizavetabrodovska-dev/ipz22_301--app-INDEPENDENT-YelyzavetaBrodovska-MEU-2025" target="_blank">GitHub</a></p>
+    </section>
 
-<section id="desc">
-  <h2>Хід виконання роботи</h2>
-</section>
+    <!-- Завдання 1: Кошик з пагінацією -->
+    <section id="cart-task">
+        <h2>Завдання 1: Кошик з пагінацією</h2>
+        <p>Створення кошика з пагінацією на визначену кількість елементів.</p>
+        
+        <div class="cart">
+            <div class="cart-items" id="cartItems">
+                <!-- Тут будуть відображатися товари -->
+            </div>
+            <div class="pagination" id="pagination">
+                <!-- Тут будуть кнопки пагінації -->
+            </div>
+        </div>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+// Дані товарів
+const products = [
+    { id: 1, name: "Товар 1", price: 100, image: "https://via.placeholder.com/150" },
+    { id: 2, name: "Товар 2", price: 200, image: "https://via.placeholder.com/150" },
+    { id: 3, name: "Товар 3", price: 300, image: "https://via.placeholder.com/150" },
+    { id: 4, name: "Товар 4", price: 400, image: "https://via.placeholder.com/150" },
+    { id: 5, name: "Товар 5", price: 500, image: "https://via.placeholder.com/150" },
+    { id: 6, name: "Товар 6", price: 600, image: "https://via.placeholder.com/150" },
+    { id: 7, name: "Товар 7", price: 700, image: "https://via.placeholder.com/150" },
+    { id: 8, name: "Товар 8", price: 800, image: "https://via.placeholder.com/150" },
+    { id: 9, name: "Товар 9", price: 900, image: "https://via.placeholder.com/150" },
+    { id: 10, name: "Товар 10", price: 1000, image: "https://via.placeholder.com/150" }
+];
 
-<section id="concl">
-  <h2>Висновки</h2>
-</section>
+let currentPage = 1;
+const itemsPerPage = 3;
 
-<section id="questions">
-  <h2>Контрольні запитання</h2>
-</section>
+function displayCartItems(page) {
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const pageItems = products.slice(startIndex, endIndex);
+    
+    const cartItems = document.getElementById('cartItems');
+    cartItems.innerHTML = '';
+    
+    pageItems.forEach(product => {
+        const item = document.createElement('div');
+        item.className = 'cart-item';
+        item.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>Ціна: ${product.price} грн</p>
+            <button onclick="addToCart(${product.id})">Додати в кошик</button>
+        `;
+        cartItems.appendChild(item);
+    });
+    
+    updatePagination();
+}
+
+function updatePagination() {
+    const totalPages = Math.ceil(products.length / itemsPerPage);
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+    
+    for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+        button.className = i === currentPage ? 'active' : '';
+        button.onclick = () => {
+            currentPage = i;
+            displayCartItems(currentPage);
+        };
+        pagination.appendChild(button);
+    }
+}
+
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    console.log(`Додано в кошик: ${product.name}`);
+}
+
+// Ініціалізація
+displayCartItems(currentPage);</pre>
+    </section>
+
+    <!-- Завдання 2: Галерея зображень -->
+    <section id="gallery-task">
+        <h2>Завдання 2: Галерея зображень</h2>
+        <p>Створення галереї зображень з використанням бібліотеки basicLightbox.</p>
+        
+        <ul class="gallery" id="gallery">
+            <!-- Галерея буде додана через JavaScript -->
+        </ul>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+const images = [
+    {
+        preview: 'https://via.placeholder.com/300x200/3498db/ffffff?text=Image+1',
+        original: 'https://via.placeholder.com/1200x800/3498db/ffffff?text=Image+1',
+        description: 'Перше зображення'
+    },
+    {
+        preview: 'https://via.placeholder.com/300x200/2ecc71/ffffff?text=Image+2',
+        original: 'https://via.placeholder.com/1200x800/2ecc71/ffffff?text=Image+2',
+        description: 'Друге зображення'
+    },
+    {
+        preview: 'https://via.placeholder.com/300x200/e74c3c/ffffff?text=Image+3',
+        original: 'https://via.placeholder.com/1200x800/e74c3c/ffffff?text=Image+3',
+        description: 'Третє зображення'
+    },
+    {
+        preview: 'https://via.placeholder.com/300x200/f39c12/ffffff?text=Image+4',
+        original: 'https://via.placeholder.com/1200x800/f39c12/ffffff?text=Image+4',
+        description: 'Четверте зображення'
+    }
+];
+
+function createGallery() {
+    const gallery = document.getElementById('gallery');
+    const markup = images.map(image => `
+        <li class="gallery-item">
+            <img class="gallery-image" src="${image.preview}" 
+                 data-original="${image.original}" 
+                 alt="${image.description}" />
+        </li>
+    `).join('');
+    gallery.innerHTML = markup;
+}
+
+// Делегування подій
+document.getElementById('gallery').addEventListener('click', (e) => {
+    if (e.target.classList.contains('gallery-image')) {
+        const originalUrl = e.target.dataset.original;
+        const description = e.target.alt;
+        
+        const instance = basicLightbox.create(`
+            <img src="${originalUrl}" alt="${description}" width="800" height="600">
+        `);
+        instance.show();
+    }
+});
+
+createGallery();</pre>
+    </section>
+
+    <!-- Завдання 3: Форма зворотного зв'язку -->
+    <section id="feedback-form-task">
+        <h2>Завдання 3: Форма зворотного зв'язку</h2>
+        <p>Форма зворотного зв'язку зі збереженням даних у локальному сховищі.</p>
+        
+        <form class="feedback-form">
+            <label>
+                Email
+                <input type="email" name="email" autofocus />
+            </label>
+            <label>
+                Message
+                <textarea name="message" rows="8"></textarea>
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+const formData = { email: "", message: "" };
+const form = document.querySelector('.feedback-form');
+const STORAGE_KEY = "feedback-form-state";
+
+// Завантаження даних з локального сховища
+function loadFormData() {
+    const savedData = localStorage.getItem(STORAGE_KEY);
+    if (savedData) {
+        const parsedData = JSON.parse(savedData);
+        formData.email = parsedData.email || "";
+        formData.message = parsedData.message || "";
+        form.elements.email.value = formData.email;
+        form.elements.message.value = formData.message;
+    }
+}
+
+// Збереження даних у локальному сховищі
+function saveFormData() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+}
+
+// Обробник події input
+form.addEventListener('input', (e) => {
+    formData[e.target.name] = e.target.value.trim();
+    saveFormData();
+});
+
+// Обробник події submit
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    if (!formData.email || !formData.message) {
+        alert('Fill please all fields');
+        return;
+    }
+    
+    console.log('Form data:', formData);
+    localStorage.removeItem(STORAGE_KEY);
+    formData.email = "";
+    formData.message = "";
+    form.reset();
+});
+
+loadFormData();</pre>
+    </section>
+
+    <!-- Завдання 4: Таймер зворотного відліку -->
+    <section id="timer-task">
+        <h2>Завдання 4: Таймер зворотного відліку</h2>
+        <p>Таймер зворотного відліку з використанням бібліотек flatpickr та iziToast.</p>
+        
+        <input type="text" id="datetime-picker" />
+        <button type="button" data-start disabled>Start</button>
+        
+        <div class="timer">
+            <div class="field">
+                <span class="value" data-days>00</span>
+                <span class="label">Days</span>
+            </div>
+            <div class="field">
+                <span class="value" data-hours>00</span>
+                <span class="label">Hours</span>
+            </div>
+            <div class="field">
+                <span class="value" data-minutes>00</span>
+                <span class="label">Minutes</span>
+            </div>
+            <div class="field">
+                <span class="value" data-seconds>00</span>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+let userSelectedDate;
+let countdownInterval;
+
+const options = {
+    enableTime: true,
+    time_24hr: true,
+    defaultDate: new Date(),
+    minuteIncrement: 1,
+    onClose(selectedDates) {
+        userSelectedDate = selectedDates[0];
+        const currentDate = new Date();
+        
+        if (userSelectedDate <= currentDate) {
+            iziToast.error({
+                title: 'Error',
+                message: 'Please choose a date in the future'
+            });
+            document.querySelector('[data-start]').disabled = true;
+        } else {
+            document.querySelector('[data-start]').disabled = false;
+        }
+    },
+};
+
+flatpickr("#datetime-picker", options);
+
+function convertMs(ms) {
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+
+    const days = Math.floor(ms / day);
+    const hours = Math.floor((ms % day) / hour);
+    const minutes = Math.floor(((ms % day) % hour) / minute);
+    const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+
+    return { days, hours, minutes, seconds };
+}
+
+function addLeadingZero(value) {
+    return String(value).padStart(2, '0');
+}
+
+function updateTimer() {
+    const currentDate = new Date();
+    const timeDifference = userSelectedDate - currentDate;
+    
+    if (timeDifference <= 0) {
+        clearInterval(countdownInterval);
+        updateTimerDisplay({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        document.querySelector('#datetime-picker').disabled = false;
+        return;
+    }
+    
+    const time = convertMs(timeDifference);
+    updateTimerDisplay(time);
+}
+
+function updateTimerDisplay(time) {
+    document.querySelector('[data-days]').textContent = addLeadingZero(time.days);
+    document.querySelector('[data-hours]').textContent = addLeadingZero(time.hours);
+    document.querySelector('[data-minutes]').textContent = addLeadingZero(time.minutes);
+    document.querySelector('[data-seconds]').textContent = addLeadingZero(time.seconds);
+}
+
+document.querySelector('[data-start]').addEventListener('click', () => {
+    document.querySelector('[data-start]').disabled = true;
+    document.querySelector('#datetime-picker').disabled = true;
+    
+    countdownInterval = setInterval(updateTimer, 1000);
+    updateTimer();
+});</pre>
+    </section>
+
+    <!-- Завдання 5: Генератор промісів -->
+    <section id="promise-generator-task">
+        <h2>Завдання 5: Генератор промісів</h2>
+        <p>Генератор промісів з використанням бібліотеки iziToast.</p>
+        
+        <form class="form">
+            <label>
+                Delay (ms)
+                <input type="number" name="delay" required />
+            </label>
+            <fieldset>
+                <legend>State</legend>
+                <label>
+                    <input type="radio" name="state" value="fulfilled" required />
+                    Fulfilled
+                </label>
+                <label>
+                    <input type="radio" name="state" value="rejected" required />
+                    Rejected
+                </label>
+            </fieldset>
+            <button type="submit">Create notification</button>
+        </form>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+document.querySelector('.form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const form = e.target;
+    const delay = parseInt(form.delay.value);
+    const state = form.state.value;
+    
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (state === 'fulfilled') {
+                resolve(delay);
+            } else {
+                reject(delay);
+            }
+        }, delay);
+    });
+    
+    promise
+        .then((delay) => {
+            iziToast.success({
+                title: 'Success',
+                message: `✅ Fulfilled promise in ${delay}ms`
+            });
+        })
+        .catch((delay) => {
+            iziToast.error({
+                title: 'Error',
+                message: `❌ Rejected promise in ${delay}ms`
+            });
+        });
+    
+    form.reset();
+});</pre>
+    </section>
+
+    <!-- Завдання 6: Пошук зображень -->
+    <section id="image-search-task">
+        <h2>Завдання 6: Пошук зображень</h2>
+        <p>Пошук зображень за ключовим словом з використанням Pixabay API.</p>
+        
+        <form class="search-form" id="searchForm">
+            <input type="text" name="query" placeholder="Search images..." required />
+            <button type="submit">Search</button>
+        </form>
+        
+        <div class="loader" id="loader"></div>
+        
+        <div class="image-gallery" id="imageGallery">
+            <!-- Результати пошуку будуть тут -->
+        </div>
+        
+        <p><b>Програмний код:</b></p>
+        <pre>
+const PIXABAY_API_KEY = '44039729-8e4d5b4b4e4d5b4b4e4d5b4b';
+const searchForm = document.getElementById('searchForm');
+const imageGallery = document.getElementById('imageGallery');
+const loader = document.getElementById('loader');
+
+let lightbox;
+
+searchForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const query = e.target.query.value.trim();
+    if (!query) return;
+    
+    loader.style.display = 'block';
+    imageGallery.innerHTML = '';
+    
+    try {
+        const response = await fetch(
+            `https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=${encodeURIComponent(query)}&image_type=photo&orientation=horizontal&safesearch=true`
+        );
+        const data = await response.json();
+        
+        if (data.hits.length === 0) {
+            iziToast.info({
+                title: 'Info',
+                message: 'Sorry, there are no images matching your search query. Please try again!'
+            });
+            return;
+        }
+        
+        displayImages(data.hits);
+        initLightbox();
+    } catch (error) {
+        iziToast.error({
+            title: 'Error',
+            message: 'Something went wrong. Please try again later.'
+        });
+    } finally {
+        loader.style.display = 'none';
+    }
+});
+
+function displayImages(images) {
+    const markup = images.map(image => `
+        <a href="${image.largeImageURL}" class="image-card">
+            <img src="${image.webformatURL}" alt="${image.tags}" />
+            <div class="image-info">
+                <p><strong>Likes:</strong> ${image.likes}</p>
+                <p><strong>Views:</strong> ${image.views}</p>
+                <p><strong>Comments:</strong> ${image.comments}</p>
+                <p><strong>Downloads:</strong> ${image.downloads}</p>
+            </div>
+        </a>
+    `).join('');
+    
+    imageGallery.innerHTML = markup;
+}
+
+function initLightbox() {
+    if (lightbox) {
+        lightbox.destroy();
+    }
+    lightbox = new SimpleLightbox('.image-gallery a', {
+        captionsData: 'alt',
+        captionDelay: 250
+    });
+}</pre>
+    </section>
+
+    <section id="concl">
+        <h2>Висновки</h2>
+        <p>
+            У ході виконання лабораторної роботи №8 я придбала практичні навички роботи з Web Storage API, 
+            асинхронністю, промісами, HTTP-запитами та REST API. Було реалізовано різноманітні завдання, 
+            що демонструють роботу з локальним сховищем, створення та обробку промісів, взаємодію з зовнішніми API, 
+            а також використання сучасних бібліотек для покращення користувацького досвіду.
+        </p>
+    </section>
+
+    <!-- Підключення JavaScript бібліотек -->
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/izitoast"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.2/dist/simple-lightbox.min.js"></script>
+
+    <script>
+        // Завдання 1: Кошик з пагінацією
+        const products = [
+            { id: 1, name: "Товар 1", price: 100, image: "https://via.placeholder.com/150" },
+            { id: 2, name: "Товар 2", price: 200, image: "https://via.placeholder.com/150" },
+            { id: 3, name: "Товар 3", price: 300, image: "https://via.placeholder.com/150" },
+            { id: 4, name: "Товар 4", price: 400, image: "https://via.placeholder.com/150" },
+            { id: 5, name: "Товар 5", price: 500, image: "https://via.placeholder.com/150" },
+            { id: 6, name: "Товар 6", price: 600, image: "https://via.placeholder.com/150" },
+            { id: 7, name: "Товар 7", price: 700, image: "https://via.placeholder.com/150" },
+            { id: 8, name: "Товар 8", price: 800, image: "https://via.placeholder.com/150" },
+            { id: 9, name: "Товар 9", price: 900, image: "https://via.placeholder.com/150" },
+            { id: 10, name: "Товар 10", price: 1000, image: "https://via.placeholder.com/150" }
+        ];
+
+        let currentPage = 1;
+        const itemsPerPage = 3;
+
+        function displayCartItems(page) {
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const pageItems = products.slice(startIndex, endIndex);
+            
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+            
+            pageItems.forEach(product => {
+                const item = document.createElement('div');
+                item.className = 'cart-item';
+                item.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>Ціна: ${product.price} грн</p>
+                    <button onclick="addToCart(${product.id})">Додати в кошик</button>
+                `;
+                cartItems.appendChild(item);
+            });
+            
+            updatePagination();
+        }
+
+        function updatePagination() {
+            const totalPages = Math.ceil(products.length / itemsPerPage);
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+            
+            for (let i = 1; i <= totalPages; i++) {
+                const button = document.createElement('button');
+                button.textContent = i;
+                button.className = i === currentPage ? 'active' : '';
+                button.onclick = () => {
+                    currentPage = i;
+                    displayCartItems(currentPage);
+                };
+                pagination.appendChild(button);
+            }
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            console.log(`Додано в кошик: ${product.name}`);
+        }
+
+        // Ініціалізація кошика
+        displayCartItems(currentPage);
+
+        // Завдання 2: Галерея зображень
+        const images = [
+            {
+                preview: 'https://via.placeholder.com/300x200/3498db/ffffff?text=Image+1',
+                original: 'https://via.placeholder.com/1200x800/3498db/ffffff?text=Image+1',
+                description: 'Перше зображення'
+            },
+            {
+                preview: 'https://via.placeholder.com/300x200/2ecc71/ffffff?text=Image+2',
+                original: 'https://via.placeholder.com/1200x800/2ecc71/ffffff?text=Image+2',
+                description: 'Друге зображення'
+            },
+            {
+                preview: 'https://via.placeholder.com/300x200/e74c3c/ffffff?text=Image+3',
+                original: 'https://via.placeholder.com/1200x800/e74c3c/ffffff?text=Image+3',
+                description: 'Третє зображення'
+            },
+            {
+                preview: 'https://via.placeholder.com/300x200/f39c12/ffffff?text=Image+4',
+                original: 'https://via.placeholder.com/1200x800/f39c12/ffffff?text=Image+4',
+                description: 'Четверте зображення'
+            }
+        ];
+
+        function createGallery() {
+            const gallery = document.getElementById('gallery');
+            const markup = images.map(image => `
+                <li class="gallery-item">
+                    <img class="gallery-image" src="${image.preview}" 
+                         data-original="${image.original}" 
+                         alt="${image.description}" />
+                </li>
+            `).join('');
+            gallery.innerHTML = markup;
+        }
+
+        // Делегування подій для галереї
+        document.getElementById('gallery').addEventListener('click', (e) => {
+            if (e.target.classList.contains('gallery-image')) {
+                const originalUrl = e.target.dataset.original;
+                const description = e.target.alt;
+                
+                const instance = basicLightbox.create(`
+                    <img src="${originalUrl}" alt="${description}" width="800" height="600">
+                `);
+                instance.show();
+            }
+        });
+
+        createGallery();
+
+        // Завдання 3: Форма зворотного зв'язку
+        const formData = { email: "", message: "" };
+        const form = document.querySelector('.feedback-form');
+        const STORAGE_KEY = "feedback-form-state";
+
+        function loadFormData() {
+            const savedData = localStorage.getItem(STORAGE_KEY);
+            if (savedData) {
+                const parsedData = JSON.parse(savedData);
+                formData.email = parsedData.email || "";
+                formData.message = parsedData.message || "";
+                form.elements.email.value = formData.email;
+                form.elements.message.value = formData.message;
+            }
+        }
+
+        function saveFormData() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+        }
+
+        form.addEventListener('input', (e) => {
+            formData[e.target.name] = e.target.value.trim();
+            saveFormData();
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (!formData.email || !formData.message) {
+                alert('Fill please all fields');
+                return;
+            }
+            
+            console.log('Form data:', formData);
+            localStorage.removeItem(STORAGE_KEY);
+            formData.email = "";
+            formData.message = "";
+            form.reset();
+        });
+
+        loadFormData();
+
+        // Завдання 4: Таймер зворотного відліку
+        let userSelectedDate;
+        let countdownInterval;
+
+        const options = {
+            enableTime: true,
+            time_24hr: true,
+            defaultDate: new Date(),
+            minuteIncrement: 1,
+            onClose(selectedDates) {
+                userSelectedDate = selectedDates[0];
+                const currentDate = new Date();
+                
+                if (userSelectedDate <= currentDate) {
+                    iziToast.error({
+                        title: 'Error',
+                        message: 'Please choose a date in the future'
+                    });
+                    document.querySelector('[data-start]').disabled = true;
+                } else {
+                    document.querySelector('[data-start]').disabled = false;
+                }
+            },
+        };
+
+        flatpickr("#datetime-picker", options);
+
+        function convertMs(ms) {
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const days = Math.floor(ms / day);
+            const hours = Math.floor((ms % day) / hour);
+            const minutes = Math.floor(((ms % day) % hour) / minute);
+            const seconds = Math.floor((((ms % day) % hour) % minute) / second);
+
+            return { days, hours, minutes, seconds };
+        }
+
+        function addLeadingZero(value) {
+            return String(value).padStart(2, '0');
+        }
+
+        function updateTimer() {
+            const currentDate = new Date();
+            const timeDifference = userSelectedDate - currentDate;
+            
+            if (timeDifference <= 0) {
+                clearInterval(countdownInterval);
+                updateTimerDisplay({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+                document.querySelector('#datetime-picker').disabled = false;
+                return;
+            }
+            
+            const time = convertMs(timeDifference);
+            updateTimerDisplay(time);
+        }
+
+        function updateTimerDisplay(time) {
+            document.querySelector('[data-days]').textContent = addLeadingZero(time.days);
+            document.querySelector('[data-hours]').textContent = addLeadingZero(time.hours);
+            document.querySelector('[data-minutes]').textContent = addLeadingZero(time.minutes);
+            document.querySelector('[data-seconds]').textContent = addLeadingZero(time.seconds);
+        }
+
+        document.querySelector('[data-start]').addEventListener('click', () => {
+            document.querySelector('[data-start]').disabled = true;
+            document.querySelector('#datetime-picker').disabled = true;
+            
+            countdownInterval = setInterval(updateTimer, 1000);
+            updateTimer();
+        });
+
+        // Завдання 5: Генератор промісів
+        document.querySelector('.form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const form = e.target;
+            const delay = parseInt(form.delay.value);
+            const state = form.state.value;
+            
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (state === 'fulfilled') {
+                        resolve(delay);
+                    } else {
+                        reject(delay);
+                    }
+                }, delay);
+            });
+            
+            promise
+                .then((delay) => {
+                    iziToast.success({
+                        title: 'Success',
+                        message: `✅ Fulfilled promise in ${delay}ms`
+                    });
+                })
+                .catch((delay) => {
+                    iziToast.error({
+                        title: 'Error',
+                        message: `❌ Rejected promise in ${delay}ms`
+                    });
+                });
+            
+            form.reset();
+        });
+
+        // Завдання 6: Пошук зображень
+        const PIXABAY_API_KEY = '44039729-8e4d5b4b4e4d5b4b4e4d5b4b';
+        const searchForm = document.getElementById('searchForm');
+        const imageGallery = document.getElementById('imageGallery');
+        const loader = document.getElementById('loader');
+
+        let lightbox;
+
+        searchForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const query = e.target.query.value.trim();
+            if (!query) return;
+            
+            loader.style.display = 'block';
+            imageGallery.innerHTML = '';
+            
+            try {
+                const response = await fetch(
+                    `https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=${encodeURIComponent(query)}&image_type=photo&orientation=horizontal&safesearch=true`
+                );
+                const data = await response.json();
+                
+                if (data.hits.length === 0) {
+                    iziToast.info({
+                        title: 'Info',
+                        message: 'Sorry, there are no images matching your search query. Please try again!'
+                    });
+                    return;
+                }
+                
+                displayImages(data.hits);
+                initLightbox();
+            } catch (error) {
+                iziToast.error({
+                    title: 'Error',
+                    message: 'Something went wrong. Please try again later.'
+                });
+            } finally {
+                loader.style.display = 'none';
+            }
+        });
+
+        function displayImages(images) {
+            const markup = images.map(image => `
+                <a href="${image.largeImageURL}" class="image-card">
+                    <img src="${image.webformatURL}" alt="${image.tags}" />
+                    <div class="image-info">
+                        <p><strong>Likes:</strong> ${image.likes}</p>
+                        <p><strong>Views:</strong> ${image.views}</p>
+                        <p><strong>Comments:</strong> ${image.comments}</p>
+                        <p><strong>Downloads:</strong> ${image.downloads}</p>
+                    </div>
+                </a>
+            `).join('');
+            
+            imageGallery.innerHTML = markup;
+        }
+
+        function initLightbox() {
+            if (lightbox) {
+                lightbox.destroy();
+            }
+            lightbox = new SimpleLightbox('.image-gallery a', {
+                captionsData: 'alt',
+                captionDelay: 250
+            });
+        }
+    </script>
+</body>
+</html>
